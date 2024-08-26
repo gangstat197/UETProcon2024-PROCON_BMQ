@@ -1,12 +1,11 @@
 # swagger doc: https://proconvn.duckdns.org/docs
 
-import requests
 import json
 
+import requests
 
 url = "https://proconvn.duckdns.org"
 headers = {"Authorization": "<TOKEN_HERE>"}
-
 
 # request question from server
 question_id = 12

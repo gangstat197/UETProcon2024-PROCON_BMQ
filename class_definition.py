@@ -1,5 +1,3 @@
-from typing import *
-
 class Operation:
     # direction can be [left, right, up, down]
     dir: str
@@ -12,6 +10,7 @@ class Operation:
         self.x = x
         self.y = y
         self.matrix = matrix
+
 
 class Matrix:
     matrix: list[list[int]]
@@ -27,7 +26,7 @@ class Matrix:
 
     def die_cutting(self, o: Operation):
         p, q = len(o.matrix), len(o.matrix[0])  # Dimensions of the pattern
-        
+
         # Step 1: Determine the positions to "lift" based on the pattern
         lifted_positions = []
         for i in range(p):
@@ -36,12 +35,12 @@ class Matrix:
                     bx, by = o.x + j, o.y + i
                     if 0 <= bx < self.n and 0 <= by < self.m:
                         lifted_positions.append((by, bx))
-        
+
         # Step 2: Lift elements by setting them to None
         lifted_elements = [self.matrix[by][bx] for by, bx in lifted_positions]
         for by, bx in lifted_positions:
             self.matrix[by][bx] = None
-        
+
         # Step 3: Shift remaining elements according to the direction
         if o.dir == 'up':
             for bx in range(self.n):
@@ -63,7 +62,7 @@ class Matrix:
                 row = [self.matrix[by][bx] for bx in range(self.n) if self.matrix[by][bx] is not None]
                 for bx in range(self.n - 1, -1, -1):
                     self.matrix[by][bx] = row.pop() if row else None
-        
+
         # Step 4: Place the lifted elements back into the matrix
         empty_positions = [(by, bx) for by in range(self.m) for bx in range(self.n) if self.matrix[by][bx] is None]
         for pos, elem in zip(empty_positions, lifted_elements):
@@ -73,15 +72,4 @@ class Matrix:
         for row in self.matrix:
             print(row)
 
-# Example
-B = [[1, 2, 3], 
-     [4, 0, 6], 
-     [7, 8, 9]]
 
-P = [[1, 0], 
-     [1, 1]]
-
-ma = Matrix(B)
-op = Operation(1, 1, 'left', P)
-ma.die_cutting(op)
-ma.display()
