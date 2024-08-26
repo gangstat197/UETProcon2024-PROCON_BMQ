@@ -1,11 +1,32 @@
+class Die:
+    matrix: list[list[int]]
+
+    # index
+    index: int
+    # columns
+    col: int
+    # rows
+    row: int
+
+    def __init__(self, index, matrix: list[list[int]]):
+        self.matrix = matrix
+        self.index = index
+        self.n = len(matrix[0])
+        self.m = len(matrix)
+
+    def display(self):
+        for row in self.matrix:
+            print(row)
+
+
 class Operation:
     # direction can be [left, right, up, down]
     dir: str
     x: int
     y: int
-    matrix: list[list[int]]
+    matrix: Die
 
-    def __init__(self, x: int, y: int, dir: str, matrix: list[list[int]]):
+    def __init__(self, x: int, y: int, dir: str, matrix: Die):
         self.dir = dir
         self.x = x
         self.y = y
@@ -71,5 +92,3 @@ class Matrix:
     def display(self):
         for row in self.matrix:
             print(row)
-
-

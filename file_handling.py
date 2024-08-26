@@ -1,5 +1,5 @@
-from class_definition import Matrix
-from class_definition import Operation
+from class_definition import *
+
 
 def get_board(is_start, question):
     boards = question["board"]
@@ -9,3 +9,16 @@ def get_board(is_start, question):
         board = Matrix(boards["goal"])
 
     return board
+
+
+def get_all_dies(question):
+    dies: list[Die]
+    dies = []
+    general = question["general"]
+    n = general["n"]
+    patterns = general["patterns"]
+    for pattern in patterns :
+        die = Die(index=pattern["p"], matrix=pattern["cells"])
+        dies.append(die)
+
+    return dies
