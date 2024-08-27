@@ -73,15 +73,30 @@ class Matrix:
         for row in self.matrix:
             print(row)
 
+class Operation:
+    # direction can be [left, right, up, down]
+    dir: str
+    x: int
+    y: int
+    matrix: list[list[int]]
+
+    def __init__(self, x: int, y: int, dir: str, matrix: list[list[int]]):
+        self.dir = dir
+        self.x = x
+        self.y = y
+        self.matrix = matrix
+#We will solve this problem using only fixed dies
+def solve(init: Matrix, final: Matrix) -> list[Operation]:
+    pass
+
 # Example
 B = [[1, 2, 3], 
      [4, 0, 6], 
      [7, 8, 9]]
-
-P = [[1, 0], 
-     [1, 1]]
+G = [[1,2,3],
+     [4,5,6],
+     [7,8,9]]
 
 ma = Matrix(B)
-op = Operation(1, 1, 'left', P)
-ma.die_cutting(op)
-ma.display()
+fi = Matrix(G)
+ans = solve(ma, fi)
