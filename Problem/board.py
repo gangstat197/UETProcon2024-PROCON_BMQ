@@ -1,3 +1,5 @@
+from die import *
+
 def compare(a, b):
     difference_count = 0
 
