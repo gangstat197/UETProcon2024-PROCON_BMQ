@@ -1,7 +1,7 @@
 import api_handling as api
 import file_handling
 import file_handling as file
-import solve
+import solve as solve
 
 # Set question
 question_id = 11
@@ -29,5 +29,6 @@ for die in dies :
     die.display()
 
 # Solving
+
 
 # Ouput Handling

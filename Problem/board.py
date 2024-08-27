@@ -1,19 +1,6 @@
-from die import *
+from Problem.die import *
 
-def compare(a, b):
-    difference_count = 0
 
-    # Compare the matrices element-wise and count differences
-    for i in range(a.m):
-        for j in range(a.n):
-            if a.matrix[i][j] != b.matrix[i][j]:
-                difference_count += 1
-
-    def __init__(self, x: int, y: int, dir: str, matrix: list[list[int]]):
-        self.dir = dir
-        self.x = x
-        self.y = y
-        self.matrix = matrix
 
 class Matrix:
     matrix: list[list[int]]
