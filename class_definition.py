@@ -1,3 +1,5 @@
+import copy
+
 class Die:
     matrix: list[list[int]]
 
@@ -24,9 +26,9 @@ class Operation:
     dir: str
     x: int
     y: int
-    matrix: Die
+    matrix: list[list[int]]
 
-    def __init__(self, x: int, y: int, dir: str, matrix: Die):
+    def __init__(self, x: int, y: int, dir: str, matrix: list[list[int]]):
         self.dir = dir
         self.x = x
         self.y = y
@@ -73,6 +75,7 @@ class Matrix:
                 col = [self.matrix[by][bx] for by in range(self.m) if self.matrix[by][bx] is not None]
                 for by in range(self.m - 1, -1, -1):
                     self.matrix[by][bx] = col.pop() if col else None
+            
         elif o.dir == 'left':
             for by in range(self.m):
                 row = [self.matrix[by][bx] for bx in range(self.n) if self.matrix[by][bx] is not None]
@@ -88,7 +91,38 @@ class Matrix:
         empty_positions = [(by, bx) for by in range(self.m) for bx in range(self.n) if self.matrix[by][bx] is None]
         for pos, elem in zip(empty_positions, lifted_elements):
             self.matrix[pos[0]][pos[1]] = elem
+    # def die_cutted(self, o : Operation):
 
     def display(self):
         for row in self.matrix:
             print(row)
+    def compare(self, other) -> bool:
+        if (other.m != self.m and other.n != self.n):
+            print("Warning! Two matrix aren't a same size")
+            return False
+        return self.matrix == other.matrix
+def clone(ma : Matrix):
+    return Matrix(copy.deepcopy(ma.matrix))
+size_lst = [1, 2]
+dir_lst = ['up', 'down', 'left', 'right']
+die_lst = [[[1]]]
+
+for size in size_lst:
+    if (size == 1):
+        continue
+    die1 = [[1]*size for i in range(size)]
+    die2 = [[0]*size for i in range(size)]
+    die3 = [[0]*size for i in range(size)]
+    for i in range(size):
+        for j in range(size):
+            if (j % 2 == 0):
+                die2[i][j] = 1 
+    for i in range(size):
+        for j in range(size):
+            if (i % 2 == 0):
+                die3[i][j] = 1 
+    # print(die1)
+    # print(die2)
+    # print(die3)
+    die_lst.extend([die1, die2, die3])
+# print(len(die_lst))
