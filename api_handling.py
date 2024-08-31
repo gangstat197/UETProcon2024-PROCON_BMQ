@@ -3,7 +3,7 @@ import json
 import requests
 
 url = "https://proconvn.duckdns.org"
-token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsIm5hbWUiOiJQUk9DT05fQk1RIiwiaXNfYWRtaW4iOmZhbHNlLCJpYXQiOjE3MjQ2NDc0NDcsImV4cCI6MTcyNDgyMDI0N30.VvfEIhULZbzagKUni9w-x5gxCwDhYpNDQx4adxeT75I"
+token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsIm5hbWUiOiJQUk9DT05fQk1RIiwiaXNfYWRtaW4iOmZhbHNlLCJpYXQiOjE3MjUxMTQ1MjUsImV4cCI6MTcyNTI4NzMyNX0.ct9oS-hdbg_7x2gyty4Yp4wqXRl194xi-UBGhxWAdbk"
 
 headers = {
     "Authorization": token
