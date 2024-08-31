@@ -2,6 +2,8 @@ from class_definition import *
 import copy
 #We will solve this problem using only fixed dies
 def solve(init: Matrix, final: Matrix) -> list[Operation]:
+     init = init.matrix
+     final = final.matrix
      final_obj = Matrix([list(i) for i in final])
      for die in die_lst:
           # print("die:", die)

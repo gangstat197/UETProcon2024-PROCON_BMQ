@@ -21,11 +21,11 @@ B = ((1, 2, 3),
 G = ((1, 2, 3),
      (4, 6, 0),
      (7, 9, 8))
-solve(B, G)
+solve(Matrix(B), Matrix(G))
 B = ((1, 2, 3),
      (4, 0, 6),
      (7, 8, 9))
 G = ((2, 3, 1),
      (0, 6, 4),
      (8, 9, 7))
-solve(B, G)
+solve(Matrix(B), Matrix(G))
