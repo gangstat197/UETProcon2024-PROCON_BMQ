@@ -33,7 +33,10 @@ class Operation:
         self.x = x
         self.y = y
         self.matrix = matrix
-
+    def display(self):
+        print("x : {}, y: {}, direction: {}".format(self.x, self.y, self.dir))
+        for row in self.matrix:
+            print(row)
 
 class Matrix:
     matrix: list[list[int]]
@@ -103,7 +106,7 @@ class Matrix:
         return self.matrix == other.matrix
 def clone(ma : Matrix):
     return Matrix(copy.deepcopy(ma.matrix))
-size_lst = [1, 2]
+size_lst = [1, 2, 4, 8, 16, 32, 64, 128, 256]
 dir_lst = ['up', 'down', 'left', 'right']
 die_lst = [[[1]]]
 

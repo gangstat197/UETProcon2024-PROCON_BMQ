@@ -15,7 +15,7 @@ def solve(init: Matrix, final: Matrix) -> list[Operation]:
                          # copyc.display()
                          if (copyc.compare(final_obj)):
                               print("Found matrix")
-                              print(o.matrix)
+                              o.display()
                               return [o]
      print("Warning!! Cannot find suitable move")
      return []
@@ -29,25 +29,3 @@ def compare(a, b):
                     difference_count += 1
      return difference_count
 
-# Example
-B = [[1, 2, 3], 
-     [4, 0, 6], # 0 4 6
-     [7, 8, 9]] # 8 7 9
-G = [[1, 2, 3],
-     [4, 6, 0],
-     [7, 9, 8]]
-
-P = [[1, 0],  #die
-     [1, 0]]
-
-ma = Matrix(B)
-op = Operation(0, 0, 'left', P)
-ma.die_cutting(op)
-ma.display()
-B = ((1, 2, 3),
-     (4, 0, 6),
-     (7, 8, 9))
-G = ((1, 2, 3),
-     (4, 6, 0),
-     (7, 9, 8))
-solve(B, G)
