@@ -31,9 +31,10 @@ general_dies = file_handling.get_all_dies(question)
 
 # Sum up all dies
 dies = fixed_dies + general_dies
-for die in dies:
-    if die.index < 10 or die.index > 24:
-        die.display()
+
+# for die in dies:
+#     if die.index < 10 or die.index > 24:
+#         die.display()
 
 # Answers settings----------------
 # Dies: list of Die
@@ -52,14 +53,14 @@ ans_name = f"question_{question_id}_solution"
 file.create_answer_file(operations, ans_name)
 
 # Random Solve here
-test_size = 1000000
-rand_operations = random_solve(start_board, goal_board, dies, moves, test_size)
-
-# Random Output
-rand_ans_name: str
-rand_ans_name = f"question_{question_id}_random_solution"
-
-file.create_answer_file(rand_operations, rand_ans_name)
+# test_size = 1000000
+# rand_operations = random_solve(start_board, goal_board, dies, moves, test_size)
+#
+# # Random Output
+# rand_ans_name: str
+# rand_ans_name = f"question_{question_id}_random_solution"
+#
+# file.create_answer_file(rand_operations, rand_ans_name)
 
 # Testing
 
