@@ -31,9 +31,10 @@ general_dies = file_handling.get_all_dies(question)
 
 # Sum up all dies
 dies = fixed_dies + general_dies
-for die in dies:
-    if die.index < 10 or die.index > 24:
-        die.display()
+
+# for die in dies:
+#     if die.index < 10 or die.index > 24:
+#         die.display()
 
 # Answers settings----------------
 # Dies: list of Die

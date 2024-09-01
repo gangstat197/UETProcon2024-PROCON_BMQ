@@ -36,9 +36,11 @@ def solve(start: Matrix, goal: Matrix, dies: list[Die], max_move: int = 1) -> li
                             # if current operation makes better result, reset best_score to diff
                             best_operation = operation
                             best_score = diff
-                            current_matrix = copy_matrix
+                            current_matrix = clone(copy_matrix)
                             print("Current Best Score: {}".format(best_score))
-                            if (diff == 0): return operations
+                            if diff == 0:
+                                operations.append(best_operation)
+                                return operations
 
         operations.append(best_operation)
         current_best_matrix = current_matrix
