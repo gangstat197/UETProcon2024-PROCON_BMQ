@@ -28,4 +28,4 @@ B = [[1, 2, 3],
 #      [7, 9, 8]]
 fixed_dies = generate_fixed_die()
 solve(Matrix(B), ma, fixed_dies, 10)
-# solve_3moves(Matrix(B), ma, fixed_dies)
+solve_3moves(Matrix(B), ma, fixed_dies)

@@ -51,6 +51,7 @@ ans_name = f"question_{question_id}_solution"
 
 file.create_answer_file(operations, ans_name)
 
+'''
 # Random Solve here
 test_size = 1000000
 rand_operations = random_solve(start_board, goal_board, dies, moves, test_size)
@@ -60,7 +61,7 @@ rand_ans_name: str
 rand_ans_name = f"question_{question_id}_random_solution"
 
 file.create_answer_file(rand_operations, rand_ans_name)
-
+'''
 # Testing
 
 # test_operations = [Operation(1, 1, 1, "bottom", [[1, 1]]),
