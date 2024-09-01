@@ -142,8 +142,17 @@ class Matrix:
 
 def clone(ma: Matrix):
     return Matrix(copy.deepcopy(ma.matrix))
+def compare(a: Matrix, b: Matrix):
+    difference_count = 0
 
+    # Compare the matrices element-wise and count differences
+    for i in range(a.m):
+        for j in range(a.n):
+            if a.matrix[i][j] != b.matrix[i][j]:
+                difference_count += 1
+    return difference_count
 
+dir_lst  = ['up', 'down', 'left', 'right']
 def generate_fixed_die() -> list[Die]:
     size_lst = [1, 2, 4, 8, 16, 32, 64, 128, 256]
     die_lst: list[Die]
@@ -173,3 +182,4 @@ def generate_fixed_die() -> list[Die]:
         cur_index += 3
 
     return die_lst
+
